@@ -1,0 +1,41 @@
+<div class="container-fluid main-wrapper">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+           
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">Welcome to Green Koncepts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link">{{this.loginInfo.username}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="userLogout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="custom-row">
+        <div class="custom-col" *ngFor="let item of mainComponentList|slice:0:3">
+            <div class="card text-center" routerLink="/{{item.routerName}}">
+                <div class="card-body">
+                    <div class="btn btn-primary">{{item.name}}</div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="custom-row">
+        <div class="custom-col" *ngFor="let item of mainComponentList|slice:3:6">
+            <div class="card text-center" routerLink="/{{item.routerName}}">
+                <div class="card-body">
+                  <div class="btn btn-primary">{{item.name}}</div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
